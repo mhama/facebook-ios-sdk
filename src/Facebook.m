@@ -278,6 +278,14 @@ static NSString* kSDKVersion = @"2";
   [self authorizeWithFBAppAuth:YES safariAuth:YES];
 }
 
+- (void)authorize:(NSArray *)permissions
+    withFBAppAuth:(BOOL)tryFBAppAuth
+       safariAuth:(BOOL)trySafariAuth
+{
+  self.permissions = permissions;
+  [self authorizeWithFBAppAuth:tryFBAppAuth safariAuth:trySafariAuth];
+}
+
 /**
  * This function processes the URL the Facebook application or Safari used to
  * open your application during a single sign-on flow.

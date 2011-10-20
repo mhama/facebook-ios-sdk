@@ -51,6 +51,11 @@
 
 - (void)authorize:(NSArray *)permissions;
 
+//! added by m-hamanaka@tonchidot.com: add selection between several authorization methods.
+- (void)authorize:(NSArray *)permissions
+    withFBAppAuth:(BOOL)tryFBAppAuth
+       safariAuth:(BOOL)trySafariAuth;
+
 - (BOOL)handleOpenURL:(NSURL *)url;
 
 - (void)logout:(id<FBSessionDelegate>)delegate;
